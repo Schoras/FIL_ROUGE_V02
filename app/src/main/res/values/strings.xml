@@ -17,4 +17,11 @@
     <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_maecenas_mauris_velit_egestas_sed_dui_eu_suscipit_laoreet_ligula_quisque_feugiat_eros_condimentum_ipsum_varius_ac_tristique_leo_fringill">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mauris velit, egestas sed dui eu, suscipit laoreet ligula. Quisque feugiat eros condimentum ipsum varius, ac tristique leo fringill</string>
     <string name="demarrer">DEMARRER</string>
     <string name="bienvenue">BIENVENUE !</string>
+    <string name="title_activity_end_activity">End_activity</string>
+    <string name="question">Question?</string>
+    <string name="answer1">Answer1</string>
+    <string name="answer2">Answer2</string>
+    <string name="answer3">Answer3</string>
+    <string name="answer4">Answer4</string>
+    <string name="textview">TextView</string>
 </resources>
