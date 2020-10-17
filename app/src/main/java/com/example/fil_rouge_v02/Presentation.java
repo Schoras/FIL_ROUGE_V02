@@ -32,7 +32,7 @@ public class Presentation extends AppCompatActivity {
         startQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent e = new Intent(Presentation.this, Activity_question1.class);
+                Intent e = new Intent(Presentation.this, Activity_question.class);
                 startActivity(e);}
         });
 
