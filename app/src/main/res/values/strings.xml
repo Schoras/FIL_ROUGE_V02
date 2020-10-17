@@ -6,4 +6,15 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
+    <string name="votre_pr_nom">Votre prénom :</string>
+    <string name="pr_sentez_vous">Présentez vous !</string>
+    <string name="vous_tes">Vous êtes ?</string>
+    <string name="un_homme">Un homme</string>
+    <string name="une_femme">Une Femme</string>
+    <string name="votre_age">Votre Age ?</string>
+    <string name="votre_pr_nome">Votre prénom ?</string>
+    <string name="commencer_les_questions">Commencer les questions !</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_maecenas_mauris_velit_egestas_sed_dui_eu_suscipit_laoreet_ligula_quisque_feugiat_eros_condimentum_ipsum_varius_ac_tristique_leo_fringill">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mauris velit, egestas sed dui eu, suscipit laoreet ligula. Quisque feugiat eros condimentum ipsum varius, ac tristique leo fringill</string>
+    <string name="demarrer">DEMARRER</string>
+    <string name="bienvenue">BIENVENUE !</string>
 </resources>
