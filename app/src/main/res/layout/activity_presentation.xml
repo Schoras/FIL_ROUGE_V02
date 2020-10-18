@@ -12,7 +12,7 @@
         android:id="@+id/genderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="64dp"
         android:text="@string/pr_sentez_vous"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,14 +20,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/surnameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quel_est_votre_pr_nom"
+        app:layout_constraintBottom_toTopOf="@+id/inputName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genderRadioGroup"
+        app:layout_constraintVertical_bias="1.0" />
+
     <RadioGroup
         android:id="@+id/genderRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="152dp" >
-        
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ageText">
+
         <RadioButton
             android:id="@+id/menRb"
             android:layout_width="wrap_content"
@@ -51,63 +66,63 @@
             app:layout_constraintTop_toBottomOf="@+id/menRb" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/surnameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:text="@string/votre_prenom"
-        app:layout_constraintBottom_toTopOf="@+id/inputSurname"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/womenRb"
-        app:layout_constraintVertical_bias="1.0" />
-
     <EditText
-        android:id="@+id/inputSurname"
+        android:id="@+id/inputName"
         android:layout_width="287dp"
         android:layout_height="50dp"
         android:ems="10"
         android:importantForAutofill="no"
-        android:inputType="textPersonSurname"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.322"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="LabelFor,MissingConstraints"
-        tools:layout_editor_absoluteY="342dp" />
+        tools:layout_editor_absoluteY="340dp" />
 
     <TextView
         android:id="@+id/ageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:text="@string/vous_tes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inputAge" />
+        app:layout_constraintTop_toBottomOf="@+id/genderText" />
 
     <EditText
         android:id="@+id/inputAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="number"
-        android:min="0"
         android:max="150"
+        android:min="0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageText"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/textAge" />
 
     <Button
         android:id="@+id/buttonStartSurvey"
         android:layout_width="264dp"
         android:layout_height="56dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="48dp"
         android:text="@string/commencer_les_questions"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputAge" />
+
+    <TextView
+        android:id="@+id/textAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/quel_est_votre_age"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

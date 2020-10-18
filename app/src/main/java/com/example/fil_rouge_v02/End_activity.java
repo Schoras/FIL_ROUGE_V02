@@ -2,15 +2,19 @@ package com.example.fil_rouge_v02;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class End_activity extends AppCompatActivity implements View.OnClickListener {
 
     private Button exitButton, sendButton;
     private EditText inputmail;
+    public Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +49,7 @@ public class End_activity extends AppCompatActivity implements View.OnClickListe
                     .append("\n");
 
                 /* QUESTION FROM ACTIVITY QuestionOne */
-                switch(objectPasthrough.getString("question1")){
+                switch(objectPassthrough.getString("question1")){
                     case "0":
                         strb.append("Controlé positif à la Covid : Jamais");
                     break;
@@ -59,7 +63,7 @@ public class End_activity extends AppCompatActivity implements View.OnClickListe
                 strb.append("\n");
 
                 /* QUESTION FROM ACTIVITY QuestionTwo */
-                switch(objectPasthrough.getString("question2")){
+                switch(objectPassthrough.getString("question2")){
                     case "0":
                         strb.append("Nombre de contrôles : Aucun");
                     break;
@@ -69,7 +73,7 @@ public class End_activity extends AppCompatActivity implements View.OnClickListe
                     case "2":
                         strb.append("Nombre de contrôles : 4 à 7 fois");
                     break;
-                    case "2":
+                    case "3":
                         strb.append("Nombre de contrôles : Plus de 7 fois");
                     break;
                 }
@@ -90,7 +94,7 @@ public class End_activity extends AppCompatActivity implements View.OnClickListe
                 try {
                     startActivity(Intent.createChooser(i, "Send mail..."));
                 } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(MyActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(End_activity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
                 }
             break;
         }

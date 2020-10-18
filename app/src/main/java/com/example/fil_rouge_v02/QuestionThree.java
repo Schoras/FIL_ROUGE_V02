@@ -2,13 +2,18 @@ package com.example.fil_rouge_v02;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.SeekBar;
 
-public class Question1 extends AppCompatActivity implements View.OnClickListener {
+public class QuestionThree extends AppCompatActivity implements View.OnClickListener {
 
     private SeekBar seekBar;
     private Button btnContinue;
-    int progressValue;
+    private int progressValue;
+    public Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +24,7 @@ public class Question1 extends AppCompatActivity implements View.OnClickListener
         btnContinue = (Button) findViewById(R.id.buttonContinue);
         btnContinue.setOnClickListener(this);
 
-        simpleSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int progressChangedValue = 3;
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -31,7 +36,7 @@ public class Question1 extends AppCompatActivity implements View.OnClickListener
             public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
-        Intent intent = new Intent(this.QuestionTwo, QuestionThree.class);
+        intent = new Intent(QuestionThree.this, QuestionFour.class);
     }
 
     @Override
@@ -41,12 +46,12 @@ public class Question1 extends AppCompatActivity implements View.OnClickListener
         Bundle objectPassthrough = this.getIntent().getExtras();
 
         /* ASSIGNING THE PROGRESS BAR VALUE TO THE BUNDLE */
-        objectPassthrough.puString("question3",String.valueOf(progressValue));
+        objectPassthrough.putString("question3",String.valueOf(progressValue));
         
         /* PUTTING THE BUNDLE IN THE NEW INTENT */
         intent.putExtras(objectPassthrough);
 
         /* STARTING THE NEW ACTIVITY */
-        this.QuestionOne.startActivity(intent);
+        QuestionThree.this.startActivity(intent);
     }
 }

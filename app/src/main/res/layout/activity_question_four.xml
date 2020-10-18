@@ -2,43 +2,58 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bckgrdimg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".QuestionFour">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="356dp"
-        android:layout_height="109dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mauris velit, egestas sed dui eu, suscipit laoreet ligula. Quisque feugiat eros condimentum ipsum varius, ac tristique leo fringill"
-        app:layout_constraintBottom_toTopOf="@+id/startButton"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.647" />
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.ponroy.florian.topquiz.GameActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elegantTextHeight="false"
-        android:text=""
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585"
-        tools:layout_editor_absoluteX="16dp" />
+        <TextView
+            android:id="@+id/activity_game_question_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/quel_est_le_d_gr_de_d_sagr_ment_douleur_ressenti" />
 
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="295dp"
-        android:layout_height="76dp"
-        android:text="DEMARRER"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="339dp" />
+        <!-- Progress Bar pour indiquer le seuil de douleur -->
+        <!-- la propriété max permet de binder la valeur maximale que peut délivrer la seekbar-->
+        <SeekBar
+            android:id="@+id/seekBar_painmeter"
+            android:max="5"
+            android:progress="2"
+            android:layout_width="match_parent"
+            android:layout_height="27dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
+        <Button
+            android:id="@+id/buttonContinue"
+            android:layout_width="264dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/commencer_les_questions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar_painmeter" />
 
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

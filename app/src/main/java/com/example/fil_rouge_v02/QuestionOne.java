@@ -2,26 +2,29 @@ package com.example.fil_rouge_v02;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class QuestionOne extends AppCompatActivity implements View.OnClickListener {
 
-    private Button bntAnswerOne, btnAnswerTwo, btnAnswerThree;
+    private Button btnAnswerOne, btnAnswerTwo, btnAnswerThree;
+    private Intent intent = new Intent(QuestionOne.this, QuestionTwo.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_one);
 
-        btAnswerOne = (Button) findViewById(R.id.activity_game_answer1_btn);
-        btAnswerTwo = (Button) findViewById(R.id.activity_game_answer2_btn);
-        btAnswerthree = (Button) findViewById(R.id.activity_game_answer3_btn);
+        btnAnswerOne = (Button) findViewById(R.id.activity_game_answer1_btn);
+        btnAnswerTwo = (Button) findViewById(R.id.activity_game_answer2_btn);
+        btnAnswerThree = (Button) findViewById(R.id.activity_game_answer3_btn);
 
-        btAnswerOne.setOnClickListener(this);
-        btAnswerTwo.setOnClickListener(this);
-        btAnswerThree.setOnClickListener(this);
+        btnAnswerOne.setOnClickListener(this);
+        btnAnswerTwo.setOnClickListener(this);
+        btnAnswerThree.setOnClickListener(this);
 
-        Intent intent = new Intent(this.QuestionOne, QuestionTwo.class);
     }
 
     @Override
@@ -46,6 +49,6 @@ public class QuestionOne extends AppCompatActivity implements View.OnClickListen
         intent.putExtras(objectPassthrough);
 
         /* STARTING THE NEW ACTIVITY */
-        this.QuestionOne.startActivity(intent);
+        QuestionOne.this.startActivity(intent);
     }
 }

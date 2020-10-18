@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Question1">
+    tools:context=".QuestionThree">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -27,9 +27,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="Quel est le dégré de désagrément / douleur ressenti "+
-            "lorsqu'un corps étranger (aiguille, coton, ...) est inséré, "+
-            "sur une échelle de 0 à 5 ?"/>
+            android:text="@string/quel_est_le_d_gr_de_d_sagr_ment_douleur_ressenti" />
 
 <!-- Progress Bar pour indiquer le seuil de douleur -->
 <!-- la propriété max permet de binder la valeur maximale que peut délivrer la seekbar-->

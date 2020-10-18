@@ -2,28 +2,32 @@ package com.example.fil_rouge_v02;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-public class Question2 extends AppCompatActivity implements View.ObClickListener {
+public class QuestionTwo extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnAnswerOne, btnAnswerTwo, btnAnswerThree, btnAnswerFour;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_one);
 
-        btAnswerOne = (Button) findViewById(R.id.activity_game_answer1_btn);
-        btAnswerTwo = (Button) findViewById(R.id.activity_game_answer2_btn);
-        btAnswerThree = (Button) findViewById(R.id.activity_game_answer3_btn);
-        btAnswerFour = (Button) findViewById(R.id.activity_game_answer4_btn);
+        btnAnswerOne = (Button) findViewById(R.id.activity_game_answer1_btn);
+        btnAnswerTwo = (Button) findViewById(R.id.activity_game_answer2_btn);
+        btnAnswerThree = (Button) findViewById(R.id.activity_game_answer3_btn);
+        btnAnswerFour = (Button) findViewById(R.id.activity_game_answer4_btn);
 
-        btAnswerOne.setOnClickListener(this);
-        btAnswerTwo.setOnClickListener(this);
-        btAnswerThree.setOnClickListener(this);
-        btAnswerFour.setOnClickListener(this);
+        btnAnswerOne.setOnClickListener(this);
+        btnAnswerTwo.setOnClickListener(this);
+        btnAnswerThree.setOnClickListener(this);
+        btnAnswerFour.setOnClickListener(this);
 
-        Intent intent = new Intent(this.QuestionTwo, QuestionThree.class);
+        Intent intent = new Intent(QuestionTwo.this, QuestionThree.class);
     }
 
     @Override
@@ -52,6 +56,6 @@ public class Question2 extends AppCompatActivity implements View.ObClickListener
         intent.putExtras(objectPassthrough);
 
         /* STARTING THE NEW ACTIVITY */
-        this.QuestionOne.startActivity(intent);
+        QuestionTwo.this.startActivity(intent);
     }
 }
