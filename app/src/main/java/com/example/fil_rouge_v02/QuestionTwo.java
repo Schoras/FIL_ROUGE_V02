@@ -17,6 +17,8 @@ public class QuestionTwo extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_two);
 
+        intent = new Intent(QuestionTwo.this, QuestionThree.class);
+
         btnAnswerOne = (Button) findViewById(R.id.activity_game_answer1_btn);
         btnAnswerTwo = (Button) findViewById(R.id.activity_game_answer2_btn);
         btnAnswerThree = (Button) findViewById(R.id.activity_game_answer3_btn);
@@ -27,7 +29,7 @@ public class QuestionTwo extends AppCompatActivity implements View.OnClickListen
         btnAnswerThree.setOnClickListener(this);
         btnAnswerFour.setOnClickListener(this);
 
-        intent = new Intent(QuestionTwo.this, QuestionThree.class);
+
     }
 
     @Override

@@ -27,4 +27,6 @@
     <string name="quel_est_le_d_gr_de_d_sagr_ment_douleur_ressenti">Quel est le dégré de désagrément / douleur ressenti</string>
     <string name="quel_est_votre_pr_nom">Quel est votre prénom ?</string>
     <string name="quel_est_votre_age">Quel est votre age ?</string>
+    <string name="quitter">QUITTER</string>
+    <string name="envoyer">ENVOYER</string>
 </resources>

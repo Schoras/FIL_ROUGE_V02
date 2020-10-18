@@ -36,27 +36,34 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="128dp"
         android:text="Envoyer les résultats ? "
         android:textSize="24sp"
-        tools:ignore="HardcodedText"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="313dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textResult"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/sendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ENVOYER"
+        android:layout_marginBottom="128dp"
+        android:text="@string/envoyer"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/exitButton"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="549dp" />
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/exitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
-        android:text="QUITTER"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="84dp"
+        android:text="@string/quitter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="549dp" />
+        app:layout_constraintTop_toBottomOf="@+id/inputMail"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

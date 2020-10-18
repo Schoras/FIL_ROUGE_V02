@@ -20,12 +20,12 @@ public class QuestionThree extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_three);
 
-        seekBar = (SeekBar) findViewById(R.id.activity_game_question_dolor_seekBar);
+        seekBar = (SeekBar) findViewById(R.id.seekBar_painmeter);
         btnContinue = (Button) findViewById(R.id.buttonContinue);
         btnContinue.setOnClickListener(this);
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int progressChangedValue = 3;
+            int progressChangedValue = seekBar.getProgress();
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 progressValue = progress;
@@ -36,7 +36,7 @@ public class QuestionThree extends AppCompatActivity implements View.OnClickList
             public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
-        intent = new Intent(QuestionThree.this, QuestionFour.class);
+        intent = new Intent(QuestionThree.this, End_activity.class);
     }
 
     @Override
