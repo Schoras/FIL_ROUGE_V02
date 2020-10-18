@@ -11,7 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="356dp"
         android:layout_height="109dp"
-        android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_maecenas_mauris_velit_egestas_sed_dui_eu_suscipit_laoreet_ligula_quisque_feugiat_eros_condimentum_ipsum_varius_ac_tristique_leo_fringill"
+        android:text="Vous êtes sur une application vous permettant de recenser les personnes ayant été atteinte de la COVID19 et de quantifier le nombre de tests que vous avez pu effectuer."
         app:layout_constraintBottom_toTopOf="@+id/startButton"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintLeft_toLeftOf="parent"

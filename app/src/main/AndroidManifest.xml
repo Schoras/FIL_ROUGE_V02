@@ -9,14 +9,15 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="SONDAGE COVID"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:label="SONDAGE COVID">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,41 +26,33 @@
         </activity>
         <activity
             android:name=".Presentation"
-            android:label="@string/title_activity_presentation"
+            android:label="Présentation"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait">
 
         </activity>
         <activity
             android:name=".QuestionOne"
+            android:label="Contamination"
             android:parentActivityName=".Presentation"
             android:screenOrientation="portrait">
 
         </activity>
         <activity
             android:name=".QuestionTwo"
+            android:label="Nombre de tests"
             android:parentActivityName=".QuestionOne"
             android:screenOrientation="portrait">
 
         </activity>
         <activity
             android:name=".QuestionThree"
+            android:label="Evaluation de la douleur"
             android:parentActivityName=".QuestionTwo"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity
-            android:name=".QuestionFour"
-            android:parentActivityName=".QuestionThree"
-            android:screenOrientation="portrait">
 
-        </activity>
-        <activity
-            android:name=".End_activity"
-            android:parentActivityName=".QuestionFour"
-            android:screenOrientation="portrait"
-            android:label="@string/title_activity_end_activity">
-        </activity>
     </application>
 
 </manifest>

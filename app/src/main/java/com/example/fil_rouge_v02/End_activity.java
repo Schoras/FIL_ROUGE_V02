@@ -86,20 +86,19 @@ public class End_activity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.exitButton:
-                finish();
+                System.exit(0);
             break;
             case R.id.sendButton:
 
-                Intent i = new Intent(Intent.ACTION_SENDTO);
-                i.setType("message/rfc822");
-                i.setData(Uri.parse("mailto:"+inputmail.getText()));
-                i.putExtra(Intent.EXTRA_SUBJECT, "Resultats questionnaire");
-                i.putExtra(Intent.EXTRA_TEXT, strb.toString());
-                try {
-                    startActivity(Intent.createChooser(i, "Send mail..."));
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(End_activity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-                }
+                String uriText =
+                        "mailto:"+ inputmail.getText() +
+                                "?subject=" + Uri.encode("[RESULTATS TEST APPLICATION COVID]") +
+                                "&body=" + Uri.encode("Voici vos les réponses que vous avez saisi" + strb.toString());
+                Uri uri = Uri.parse(uriText);
+                Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
+                sendIntent.setData(uri);
+                startActivity(Intent.createChooser(sendIntent, "Send email"));
+
             break;
         }
     }
