@@ -10,7 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button startButton;
-    final Intent intent  = new Intent(MainActivity.this, Presentation.class);
+    public Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,10 +18,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         startButton = (Button) findViewById(R.id.startButton);
         startButton.setOnClickListener(this);
+
+        intent = new Intent(MainActivity.this, Presentation.class);
+
     }
 
     @Override
     public void onClick(View v) {
-        startActivity(intent);
+        MainActivity.this.startActivity(intent);
     }
 }
