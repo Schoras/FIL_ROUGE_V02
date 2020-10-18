@@ -10,12 +10,12 @@ import android.widget.Button;
 public class QuestionTwo extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnAnswerOne, btnAnswerTwo, btnAnswerThree, btnAnswerFour;
-    private Intent intent;
+    public Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question_one);
+        setContentView(R.layout.activity_question_two);
 
         btnAnswerOne = (Button) findViewById(R.id.activity_game_answer1_btn);
         btnAnswerTwo = (Button) findViewById(R.id.activity_game_answer2_btn);
@@ -27,7 +27,7 @@ public class QuestionTwo extends AppCompatActivity implements View.OnClickListen
         btnAnswerThree.setOnClickListener(this);
         btnAnswerFour.setOnClickListener(this);
 
-        Intent intent = new Intent(QuestionTwo.this, QuestionThree.class);
+        intent = new Intent(QuestionTwo.this, QuestionThree.class);
     }
 
     @Override
@@ -56,6 +56,6 @@ public class QuestionTwo extends AppCompatActivity implements View.OnClickListen
         intent.putExtras(objectPassthrough);
 
         /* STARTING THE NEW ACTIVITY */
-        QuestionTwo.this.startActivity(intent);
+        startActivity(intent);
     }
 }

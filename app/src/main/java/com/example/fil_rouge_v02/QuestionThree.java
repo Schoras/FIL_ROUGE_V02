@@ -18,7 +18,7 @@ public class QuestionThree extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question_one);
+        setContentView(R.layout.activity_question_three);
 
         seekBar = (SeekBar) findViewById(R.id.activity_game_question_dolor_seekBar);
         btnContinue = (Button) findViewById(R.id.buttonContinue);
@@ -52,6 +52,6 @@ public class QuestionThree extends AppCompatActivity implements View.OnClickList
         intent.putExtras(objectPassthrough);
 
         /* STARTING THE NEW ACTIVITY */
-        QuestionThree.this.startActivity(intent);
+        startActivity(intent);
     }
 }

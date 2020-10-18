@@ -19,7 +19,7 @@ public class Presentation extends AppCompatActivity implements View.OnClickListe
     private EditText inputName;
     private EditText inputAge;
     private Button startQuestion;
-    private Intent intent;
+    public Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

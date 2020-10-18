@@ -109,6 +109,8 @@
         android:layout_height="56dp"
         android:layout_marginTop="48dp"
         android:text="@string/commencer_les_questions"
+        android:textColor="@color/colorAccent"
+        android:background="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.421"
