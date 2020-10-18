@@ -13,7 +13,7 @@ public class QuestionThree extends AppCompatActivity implements View.OnClickList
     private SeekBar seekBar;
     private Button btnContinue;
     private int progressValue;
-    public Intent intent;
+    final Intent intent = new Intent(QuestionThree.this, QuestionFour.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +35,6 @@ public class QuestionThree extends AppCompatActivity implements View.OnClickList
 
             public void onStopTrackingTouch(SeekBar seekBar) {}
         });
-
-        intent = new Intent(QuestionThree.this, QuestionFour.class);
     }
 
     @Override

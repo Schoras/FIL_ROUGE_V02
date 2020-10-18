@@ -10,7 +10,7 @@ import android.widget.Button;
 public class QuestionOne extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnAnswerOne, btnAnswerTwo, btnAnswerThree;
-    private Intent intent = new Intent(QuestionOne.this, QuestionTwo.class);
+    final Intent intent = new Intent(QuestionOne.this, QuestionTwo.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

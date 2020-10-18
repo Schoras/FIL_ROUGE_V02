@@ -19,7 +19,7 @@ public class Presentation extends AppCompatActivity implements View.OnClickListe
     private EditText inputName;
     private EditText inputAge;
     private Button startQuestion;
-    private Intent intent;
+    final Intent intent = new Intent(Presentation.this, QuestionOne.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +29,7 @@ public class Presentation extends AppCompatActivity implements View.OnClickListe
         radioGroup = (RadioGroup)findViewById(R.id.genderRadioGroup);
         inputName = (EditText) findViewById(R.id.inputName);
         inputAge = (EditText) findViewById(R.id.inputAge);
-        startQuestion = (Button) findViewById(R.id.buttonStartSurvey);
-
-        /**
-         * CREATING THE NEW INTENT INSIDE THE ONCREATE
-         * TO SKIP THE ASSHLING TO CREATE IT LATER AND MAYBE LOSING THE CONTEXT
-         */
-        intent = new Intent(Presentation.this, QuestionOne.class);
+        startQuestion = (Button) findViewById(R.id.buttonStartSurvey);   
 
         /**
          * CREATING A PASSTHROUGH OBJECT THAT'LL .... WELL PASS "THROUGH"
@@ -46,9 +40,7 @@ public class Presentation extends AppCompatActivity implements View.OnClickListe
 
         inputName.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -56,9 +48,7 @@ public class Presentation extends AppCompatActivity implements View.OnClickListe
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
-                
-            }
+            public void afterTextChanged(Editable s) {}
         });
 
         startQuestion.setOnClickListener(this);
