@@ -13,9 +13,10 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Presentation extends AppCompatActivity {
+public class Presentation extends AppCompatActivity implements View.OnClickListener {
 
-    private RadioButton menRb,womenRb;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
     private EditText inputName;
     private EditText inputAge;
     private Button startQuestion;
@@ -25,11 +26,23 @@ public class Presentation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presentation);
 
-        menRb = (RadioButton) findViewById(R.id.menRb);
-        womenRb = (RadioButton) findViewById(R.id.womenRb);
-        inputName = (EditText) findViewById(R.id.inputName);
+        radioGroup = (RadioGroup) findByViewId(R.id.genderRadioGroup)
+        inputSurname = (EditText) findViewById(R.id.inputSurname);
         inputAge = (EditText) findViewById(R.id.inputAge);
-        startQuestion = (Button) findViewById(R.id.startQuestion);
+        startSurveyButton = (Button) findViewById(R.id.buttonStartSurvey);
+
+        /**
+         * CREATING THE NEW INTENT INSIDE THE ONCREATE
+         * TO SKIP THE ASSHLING TO CREATE IT LATER AND MAYBE LOSING THE CONTEXT
+         */
+        Intent intent = new Intent(this.Presentation, QuestionOne.class);
+
+        /**
+         * CREATING A PASSTHROUGH OBJECT THAT'LL .... WELL PASS "THROUGH"
+         * OUR DIFFERENT ACTIVITIES ...
+         */
+        Bundle objectPassthrough = new Bundle();
+        objectPassthrough.putString("")
 
         inputName.addTextChangedListener(new TextWatcher() {
             @Override
@@ -44,18 +57,31 @@ public class Presentation extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                
             }
         });
 
-        startQuestion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent e = new Intent(Presentation.this, Question1.class);
-                startActivity(e);}
-        });
+        startSurveyButton.setOnClickListener(this);
+    }
 
+    @Override
+    public void onClick(View v) {
 
+        /* GETTING GENDER RADIOBUTTON CHECKED IN RADIOGROUP */
+        int selectedButton = radioGroup.getCheckedRadioButtonId();
+        radioButton = (RadioButton) findByViewId(selectedButton);
+        objectPassthrough.putString("gender",radioButton.getText());
 
+        /* GETTING THE SURNAME */
+        objectPassthrough.putString("surname", inputSurname.getText());
+
+        /* GETTING THE AGE */
+        objectPassthrough.putString("age", inputAge.getText());
+
+        /* ADDING THE BUNDLE AS AN EXTRA TO LET IT "PASS THROUGH" */
+        intent.putExtras(objetcPassThrough);
+
+        /* THEN WE START THE NEW ACTIVITY */
+        this.Presentation.startActivity(intent);
     }
 }

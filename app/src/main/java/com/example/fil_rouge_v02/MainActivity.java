@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button startButton;
 
@@ -17,13 +17,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         startButton = (Button) findViewById(R.id.startButton);
+        startButton.setOnClickListener(this);
 
-        startButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Presentation.class);
-                startActivity(i);
-            }
-        });
+        Intent intent = new Intent(this.MainActivity, Presentation.class);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        this.MainActivity.startActivity(intent);
     }
 }

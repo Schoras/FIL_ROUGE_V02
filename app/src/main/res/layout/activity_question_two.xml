@@ -27,7 +27,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="Combien de test pour la COVID-19 avez-vous déjà effectué ?"></TextView>
+            android:text="Combien de test pour la COVID-19 avez-vous déjà effectué(e) ?"></TextView>
 
         <Button
             android:id="@+id/activity_game_answer1_btn"
